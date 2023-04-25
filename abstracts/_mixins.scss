@@ -1,0 +1,298 @@
+@use "./variables" as var;
+@use "sass:math";
+
+// RESPONSIVE LAPTOP FIRST DESIGN MIXINS
+@mixin four-k-styles {
+  @media (max-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin laptop-l-styles {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop-m-styles {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-min-styles {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-custom-styles {
+  @media (max-width: 525px) {
+    @content;
+  }
+}
+
+@mixin mobile-l-styles {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin mobile-m-styles {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobile-s-styles {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+// CONTAINERS
+@mixin medium-container {
+  max-width: 90%;
+  margin: 0 auto;
+  @include laptop-l-styles {
+    max-width: 100%;
+    padding-left: math.div(var.$gutter-base, 2);
+    padding-right: math.div(var.$gutter-base, 2);
+  }
+}
+
+%big-container {
+  max-width: 100%;
+}
+// EXTENDS
+%section {
+  padding-top: (var.$gutter-base * 2);
+  padding-bottom: (var.$gutter-base * 2);
+
+  @include tablet-styles {
+    padding-top: (var.$gutter-base);
+    padding-bottom: (var.$gutter-base);
+  }
+}
+
+%section-small {
+  padding-top: (var.$gutter-base * 0.5);
+  padding-bottom: (var.$gutter-base * 0.5);
+
+  @include tablet-styles {
+    padding-top: (var.$gutter-base);
+    padding-bottom: (var.$gutter-base);
+  }
+}
+
+%wrap {
+  width: 70%;
+  margin: 0 auto;
+  @include tablet-styles {
+    width: 100%;
+    padding-left: math.div(var.$gutter-base, 2);
+    padding-right: math.div(var.$gutter-base, 2);
+  }
+}
+
+%card-wrap {
+  width: 90%;
+  margin: 0 auto;
+  padding: var.$gutter-base * 0.5 0;
+  @include tablet-styles {
+    width: 100%;
+    padding-left: math.div(var.$gutter-base, 2);
+    padding-right: math.div(var.$gutter-base, 2);
+  }
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-wrap-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+%flex-baseline {
+  display: flex;
+  align-items: baseline;
+  padding-left: 0;
+}
+
+%flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%bar-setup {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: var.$background-color-custom;
+}
+
+%background-image-setup {
+  background-image: url(./images/6077635.jpg);
+  background-size: cover;
+  height: 50vh;
+  background-position: center;
+  background-color: grey;
+  background-blend-mode: multiply;
+}
+
+%form-input-setup {
+  border: 1px solid #f0f0f0;
+  border-radius: var.$gutter-base * 0.2;
+  display: block;
+  height: var.$gutter-base * 2;
+  width: 100%;
+  padding-left: var.$gutter-base * 1;
+  font-size: var.$font-size-medium;
+  // font-style: italic;
+  @include laptop-m-styles {
+    font-size: var.$font-size-small;
+    height: var.$gutter-base * 1.8;
+    padding-left: var.$gutter-base * 0.8;
+  }
+  @include tablet-styles {
+    height: var.$gutter-base * 1.5;
+    padding-left: var.$gutter-base * 0.5;
+  }
+}
+
+// NAVBAR MIXIN
+@mixin laptop-m-styles-nav {
+  @media (max-width: 1024px) {
+    .hamburger {
+      display: block;
+      z-index: 999999;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      background-color: red;
+      opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      flex-direction: column;
+      background-color: var.$background-color-secondary;
+      width: 100%;
+      transition: 0.3s;
+      min-height: 100vh;
+      z-index: 99;
+    }
+    .nav-item {
+      margin-bottom: var.$gutter-base * 0.9;
+      padding-left: var.$gutter-base * 2;
+      @include tablet-styles {
+        padding-left: var.$gutter-base * 1;
+      }
+    }
+    .nav-item-custom {
+      padding-top: var.$gutter-base * 4.3;
+    }
+    .nav-menu.active {
+      left: 0;
+    }
+  }
+  @include tablet-styles {
+    padding: var.$gutter-base * 0.5 0;
+  }
+}
+
+// DECORATION MIXINS
+// ANCHOR TAG HOVER EFFECT
+@mixin a-hover-effect {
+  background-image: linear-gradient(
+    to right,
+    var.$background-color-primary,
+    var.$background-color-primary 50%,
+    #302f38 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  &::before {
+    content: "";
+    background: var.$background-color-primary;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    background-position: 0;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+  @include laptop-m-styles {
+    background-image: linear-gradient(to right, var.$background-color-primary, var.$background-color-primary 50%, #fff 50%);
+  }
+}
+
+// HEART BEAT ANIMATION MIXIN
+%heart {
+  font-size: 1.5rem;
+  color: var.$background-color-btn;
+  animation: beat 1s ease-in-out infinite;
+  display: inline-block;
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

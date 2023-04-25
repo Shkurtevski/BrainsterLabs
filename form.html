@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html lang="mk">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="author" content="Nenad Shkurtevski" />
+      <link
+        rel="icon"
+        href="https://brainster.co/wp-content/uploads/2021/06/Favicon-1.png"
+        sizes="32x32"
+      />
+      <link rel="stylesheet" href="./main.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <title>Brainster Labs - Form</title>
+    </head>
+    <body>
+      <header>
+        <!-- navbar -->
+        <div class="navbar">
+          <div class="container">
+            <nav class="navbar">
+              <div class="nav-branding">
+                <a href="./index.html">
+                  <img src="./images/Logo.png" alt="brainster-academy-logo" />
+                  <span>Brainster</span>
+                </a>
+              </div>
+              <ul class="nav-menu">
+                <li class="nav-item nav-item-custom">
+                  <a
+                    href="https://brainster.co/marketing/"
+                    class="nav-link"
+                    target="_blank"
+                    >Академија за маркетинг</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="https://brainster.co/full-stack/"
+                    class="nav-link"
+                    target="_blank"
+                    >Академија за програмирање</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="https://brainster.co/data-science/"
+                    class="nav-link"
+                    target="_blank"
+                    >Академија за data science</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="https://brainster.co/graphic-design/"
+                    class="nav-link nav-link-custom"
+                    target="_blank"
+                    >Академија за дизајн</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#">
+                    <button class="btn-custom btn-nav">
+                      Вработи наш студент
+                    </button>
+                  </a>
+                </li>
+              </ul>
+              <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="form-wrapper">
+          <div class="heading-card-section">
+            <h2>Вработи студенти</h2>
+          </div>
+          <!-- form -->
+          <div class="wrapper">
+            <form action="#" id="form" method="POST">
+              <div class="user-details">
+                <div class="input-control">
+                  <label for="username" class="details">Име и презиме</label>
+                  <input
+                    type="text"
+                    placeholder="Вашето име и презиме"
+                    id="username"
+                    name="username"
+                  />
+                  <div class="error"></div>
+                </div>
+                <div class="input-control">
+                  <label class="details">Име на компанија</label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="company"
+                    placeholder="Име на вашата компанија"
+                  />
+                  <div class="error"></div>
+                </div>
+                <div class="input-control">
+                  <label class="details">Контакт имејл</label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="username"
+                    placeholder="Контакт имејл на вашата компанија"
+                  />
+                  <div class="error"></div>
+                </div>
+                <div class="input-control">
+                  <label class="details">Контакт телефон</label>
+                  <input
+                    type="tel"
+                    id="tel"
+                    name="tel"
+                    placeholder="Контакт телефон на вашата компанија"
+                  />
+                  <div class="error"></div>
+                </div>
+                <div class="input-control">
+                  <label class="details">Тип на студенти</label>
+                  <select name="students" id="students">
+                    <option value="" class="info-option" disabled selected>
+                      Изберете тип на студент
+                    </option>
+                    <option value="studentsmarketing">
+                      Студенти од маркетинг
+                    </option>
+                    <option value="studentsprogramming">
+                      Студенти од програмирање
+                    </option>
+                    <option value="studentsdatascience">
+                      Студенти од data science
+                    </option>
+                    <option value="studentsdesign">Студенти од дизајн</option>
+                  </select>
+                  <div class="error"></div>
+                </div>
+                <div class="input-control">
+                  <label class="details">Испратете ја пополнетата форма</label>
+                  <input
+                    type="submit"
+                    value="Испрати"
+                    class="btn-custom"
+                    style="border: none"
+                    onclick="validateInputs()"
+                  />
+                </div>
+              </div>
+            </form>
+            <div id="success-message">
+              <p>Формата е успешно пополнета!</p>
+              <p>
+                <button class="btn" onclick="hideSuccessMessage()">
+                  Кон формата
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer-container">
+          <p>
+            Изработено со <span class="heart">&#10084;</span> од студентите на
+            Brainster
+          </p>
+        </div>
+      </footer>
+      <script src="./navbar.js"></script>
+      <script src="./form.js"></script>
+    </body>
+  </html>
+</html>

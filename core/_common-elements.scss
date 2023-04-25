@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+body {
+  font-family: var.$font-family-base;
+  font-weight: var.$font-weight-normal;
+  line-height: var.$line-height-base;
+  color: var.$text-color-base;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: math.div(var.$gutter-base, 2);
+  font-weight: var.$font-weight-bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn-custom {
+  background-color: var.$background-color-btn;
+  color: var.$text-color-primary;
+  border: none;
+  border-radius: var.$gutter-base * 0.2;
+  padding: var.$gutter-base * 0.4 var.$gutter-base * 0.7;
+  font-weight: var.$font-weight-bold;
+  &:hover {
+    background-color: var.$background-color-secondary;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+}
+
+.btn {
+  background-color: var.$background-color-btn;
+  color: var.$text-color-primary;
+  border: none;
+  border-radius: var.$gutter-base * 0.2;
+  padding: var.$gutter-base * 0.4 var.$gutter-base * 0.7;
+  font-weight: var.$font-weight-bold;
+  box-shadow: 3px 3px 2px 0px #4a4444bf;
+  &:hover {
+    background-color: var.$background-color-secondary;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+}

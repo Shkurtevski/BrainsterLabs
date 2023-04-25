@@ -1,0 +1,100 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+main {
+  .banner {
+    @extend %flex-center;
+    @extend %background-image-setup;
+    h1 {
+      font-size: var.$font-size-extra-large;
+      color: var.$text-color-primary;
+      text-shadow: 0 0 5px #ff7f50;
+      text-align: center;
+      @include mix.laptop-l-styles {
+        font-size: var.$gutter-base * 1.9;
+      }
+      @include mix.laptop-m-styles {
+        font-size: var.$gutter-base * 1.7;
+      }
+      @include mix.tablet-styles {
+        font-size: var.$gutter-base * 1.5;
+      }
+    }
+  }
+  .filters {
+    .filters-wrapper {
+      @extend %flex-space-between;
+      background-color: var.$background-color-secondary;
+      @include mix.tablet-styles {
+        flex-direction: column;
+      }
+      .inner {
+        @extend %flex-space-between;
+        width: 33.333%;
+        border-right: 1px solid var.$background-color-custom;
+        @include mix.tablet-min-styles {
+          &:hover {
+            background-color: var.$background-color-primary;
+            transition: 0.4s;
+            cursor: pointer;
+          }
+        }
+        @include mix.tablet-styles {
+          width: 100%;
+          border-right: none;
+          &:not(:last-child) {
+            border-bottom: 1px solid var.$background-color-custom;
+          }
+        }
+        i {
+          padding-right: var.$gutter-base * 0.5;
+          color: var.$background-color-secondary;
+          font-size: var.$font-size-medium-custom;
+        }
+        input {
+          display: none;
+        }
+        label {
+          display: flex;
+          align-items: center;
+          padding: 0 var.$gutter-base * 0.5;
+          color: var.$text-color-primary;
+          font-weight: var.$font-weight-bold;
+          font-size: var.$font-size-medium;
+          width: 100%;
+          min-height: 110px;
+          cursor: pointer;
+          @include mix.laptop-m-styles {
+            font-size: var.$font-size-small;
+            min-height: 80px;
+          }
+          @include mix.tablet-styles {
+            min-height: 65px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.red-background {
+  background-color: var.$background-color-primary;
+}
+
+.animated-text {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

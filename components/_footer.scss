@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+footer {
+  background-color: var.$background-color-secondary;
+  color: var.$text-color-primary;
+  font-weight: var.$font-weight-bold;
+  .footer-container {
+    @extend %flex-center;
+    padding: var.$gutter-base * 1.2 var.$gutter-base;
+    text-align: center;
+    @include mix.laptop-m-styles {
+      font-size: var.$font-size-small;
+      padding: var.$gutter-base * 0.8 var.$gutter-base;
+    }
+    p {
+      span {
+        @extend %heart;
+      }
+    }
+  }
+}

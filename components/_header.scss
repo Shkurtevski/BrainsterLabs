@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+header {
+  .navbar {
+    background-color: var.$background-color-base;
+    @extend %section-small;
+    .container {
+      @include mix.medium-container;
+      .navbar {
+        @extend %flex-space-between;
+        .nav-branding {
+          a {
+            color: var.$background-color-secondary;
+            font-size: var.$font-size-small;
+            font-weight: var.$font-weight-bold;
+            img {
+              width: var.$gutter-base * 1.4;
+              margin: 0 auto;
+              color: var.$background-color-secondary;
+              &:hover {
+                transform: rotate(360deg);
+                transition: transform 0.7s ease;
+              }
+            }
+          }
+        }
+        .nav-menu {
+          @extend %flex-baseline;
+          @include mix.tablet-styles {
+          }
+          .nav-item {
+            .nav-link {
+              transition: 0.3s ease-out;
+              margin-right: var.$gutter-base * 0.5;
+              color: var.$background-color-secondary;
+              font-weight: var.$font-weight-bold;
+              @include mix.a-hover-effect;
+              @include mix.laptop-l-styles {
+                font-size: var.$font-size-custom;
+              }
+              @include mix.laptop-m-styles {
+                color: var.$text-color-primary;
+              }
+            }
+            .nav-link-custom {
+              margin-right: var.$gutter-base;
+            }
+            .btn {
+              font-size: 1rem;
+              @include mix.laptop-l-styles {
+                font-size: var.$font-size-small;
+              }
+            }
+          }
+        }
+        .hamburger {
+          display: none;
+          cursor: pointer;
+          @include mix.laptop-m-styles {
+            display: block;
+          }
+          .bar {
+            @extend %bar-setup;
+          }
+        }
+      }
+    }
+    @include mix.laptop-m-styles-nav;
+  }
+}

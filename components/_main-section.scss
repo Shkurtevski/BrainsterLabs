@@ -1,0 +1,121 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+main {
+  .main-container {
+    background-color: var.$background-color-base;
+    @include mix.tablet-styles {
+      padding-bottom: 30px;
+    }
+    .heading-card-section {
+      @extend %flex-center;
+      max-width: 100%;
+      padding-bottom: 45px;
+      @include mix.tablet-styles {
+        padding-bottom: 15px;
+      }
+      h2 {
+        font-size: var.$font-size-larger;
+        color: var.$background-color-secondary;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-top: 60px;
+        @include mix.laptop-l-styles {
+          font-size: var.$font-size-large;
+        }
+        @include mix.laptop-m-styles {
+          font-size: var.$font-size-medium-custom;
+        }
+        @include mix.tablet-styles {
+          font-size: var.$font-size-medium-custom-01;
+          padding-top: 30px;
+        }
+        @include mix.mobile-l-styles {
+          text-align: left;
+          width: 100%;
+          padding-left: var.$gutter-base * 0.4;
+          padding-right: var.$gutter-base * 0.4;
+          margin-left: var.$gutter-base * 0.4;
+          margin-right: var.$gutter-base * 0.4;
+        }
+      }
+    }
+    .card-wrapper {
+      @extend %flex-wrap;
+      @extend %wrap;
+      overflow: hidden;
+      @include mix.laptop-l-styles {
+        width: 90%;
+      }
+      @include mix.laptop-m-styles {
+        width: 95%;
+      }
+      @include mix.tablet-styles {
+        width: 100%;
+        padding: 0;
+      }
+      .card {
+        width: 33.333%;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+        }
+        @include mix.tablet-styles {
+          width: 50%;
+        }
+        @include mix.mobile-l-styles {
+          width: 100%;
+          margin: 0 var.$gutter-base * 0.4;
+        }
+        .card-inner {
+          background-color: var.$text-color-primary;
+          margin: var.$gutter-base * 0.5;
+          display: block;
+          border-radius: var.$gutter-base * 0.2;
+          box-shadow: 7px 7px 5px 0px #4a4444bf;
+          @include mix.mobile-l-styles {
+            margin: var.$gutter-base * 0.4;
+          }
+          img {
+            border-top-right-radius: var.$gutter-base * 0.2;
+            border-top-left-radius: var.$gutter-base * 0.2;
+          }
+          .card-content {
+            @extend %card-wrap;
+            .yellow {
+              display: inline-block;
+              padding: var.$gutter-base * 0.2 var.$gutter-base * 0.3;
+              background-color: var.$background-color-base;
+              font-size: var.$font-size-smaller;
+              margin-bottom: var.$gutter-base * 0.5;
+            }
+            .bold {
+              font-weight: bold;
+              padding-bottom: var.$gutter-base * 0.5;
+            }
+            .p-text {
+              padding-bottom: var.$gutter-base * 0.5;
+            }
+            .small {
+              font-size: var.$font-size-custom;
+              font-weight: var.$font-weight-bold;
+              padding-bottom: var.$gutter-base * 0.5;
+            }
+            .card-button {
+              display: flex;
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+    }
+    .show-more {
+      @extend %flex-center;
+      padding-top: 45px;
+      @include mix.tablet-styles {
+        padding-top: 15px;
+      }
+    }
+  }
+}

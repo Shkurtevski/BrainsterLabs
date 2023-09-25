@@ -51,35 +51,35 @@ const validateInputs = () => {
   const studentsValue = students.value.trim();
 
   if (usernameValue === "") {
-    setError(username, "Ве молиме внесете го вашето име и презиме");
+    setError(username, "Please enter your first and last name");
   } else {
     setSucess(username);
   }
 
   if (companyValue === "") {
-    setError(company, "Ве молиме внесете го името на вашата компанија");
+    setError(company, "Please enter your company name");
   } else {
     setSucess(company);
   }
 
   if (emailValue === "") {
-    setError(email, "Имејл полето е задолжително");
+    setError(email, "The email field is mandatory");
   } else if (!isValidEmail(emailValue)) {
-    setError(email, "Ве молиме внесете точна имејл адреса");
+    setError(email, "Please enter a valid email address");
   } else {
     setSucess(email);
   }
 
   if (telValue === "") {
-    setError(tel, "Телефонскиот број е задолжителен");
+    setError(tel, "The phone number is mandatory");
   } else if (!isValidTel(telValue)) {
-    setError(tel, "Ве молиме внесете точен телефонски број");
+    setError(tel, "Please enter a correct phone number");
   } else {
     setSucess(tel);
   }
 
   if (studentsValue === "") {
-    setError(students, "Ве молиме изберете тип на студент");
+    setError(students, "Please select a student type");
   } else {
     setSucess(students);
   }

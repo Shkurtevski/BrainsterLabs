@@ -2,8 +2,9 @@
 
 # Brainster Labs Website
 
-The Brainster Labs website is a responsive webpage that showcases the various academies that Brainster offers, including Marketing Academy, Programming Academy, Academy for Data Science, and Design Academy. This webpage was built using HTML, SASS, and JavaScript.
+<img src="./images/brainster-labs.png">
 
+The Brainster Labs website is a responsive webpage that showcases the various academies that Brainster offers, including Marketing Academy, Programming Academy, Academy for Data Science, and Design Academy. This webpage was built using HTML, SASS, and JavaScript.
 
 ## Table of Contents
 
@@ -19,12 +20,14 @@ The Brainster Labs website is a responsive webpage that showcases the various ac
 This webpage consists of several sections:
 
 1. Top menu (navbar) which will contain the following links:
+
 - A logo that will lead to the index page itself
 - Marketing Academy which will lead to the following link: https://brainster.co/marketing/
 - Programming Academy which will lead to the following link: https://brainster.co/full-stack/
 - Academy for data-science which will lead to the following link: https://brainster.co/data-science/
 - Design Academy which will lead to the following link: https://brainster.co/graphic-design/
 - "Employ our students" button that will take you to a new page that is shown below.
+
 2. Banner with image and text
 3. Filters
 4. Cards with projects from the academy

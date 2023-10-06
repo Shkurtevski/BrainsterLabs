@@ -27,6 +27,7 @@ This webpage consists of several sections:
 - Academy for data-science which will lead to the following link: https://brainster.co/data-science/
 - Design Academy which will lead to the following link: https://brainster.co/graphic-design/
 - "Employ our students" button that will take you to a new page that is shown below.
+- "Employ our students" button that will take you to a new page that is shown below.
 
 2. Banner with image and text
 3. Filters

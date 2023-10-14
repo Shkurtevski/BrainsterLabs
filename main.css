@@ -346,8 +346,6 @@ header .navbar .container .navbar .hamburger {
   header .navbar .nav-item-custom {
     padding-top: 8.0625rem;
   }
-}
-@media (max-width: 1024px) {
   header .navbar .nav-menu.active {
     left: 0;
   }
@@ -359,7 +357,7 @@ header .navbar .container .navbar .hamburger {
 }
 
 main .banner h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   color: #fff;
   text-shadow: 0 0 5px #ff7f50;
   text-align: center;
@@ -624,7 +622,7 @@ main .form-wrapper .heading-card-section {
   max-width: 100%;
 }
 main .form-wrapper .heading-card-section h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   color: #302f38;
   text-align: center;
   margin-bottom: 0;

@@ -7,7 +7,7 @@ main {
     @extend %flex-center;
     @extend %background-image-setup;
     h1 {
-      font-size: var.$font-size-extra-large;
+      font-size: 5rem;
       color: var.$text-color-primary;
       text-shadow: 0 0 5px #ff7f50;
       text-align: center;

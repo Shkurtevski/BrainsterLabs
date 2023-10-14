@@ -44,7 +44,7 @@ function handleWindowResize() {
   }
 }
 
-function handleCardContainerChange(mutations) {
+function handleCardContainerChange() {
   const isCardsOverflowing =
     cardsContainer.scrollHeight > cardsContainer.clientHeight;
   showMoreBtn.style.display =

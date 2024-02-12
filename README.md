@@ -15,7 +15,6 @@ The Brainster Labs website is a responsive webpage that showcases the various ac
 5. Contributing
 6. Author
 
-
 ## Features
 
 This webpage consists of several sections:
